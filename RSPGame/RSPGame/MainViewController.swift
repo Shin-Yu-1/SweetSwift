@@ -9,6 +9,8 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var myChoose = Rps(rawValue: Int.random(in: 0...2))
+    
     private lazy var homeLabel: UILabel = {
         let lb = UILabel()
         lb.text = "가위 바위 보"
@@ -90,29 +92,44 @@ class MainViewController: UIViewController {
     
     private lazy var rockButton: UIButton = {
         let rockButton = UIButton(type: .custom)
+        rockButton.setTitle("rock", for: .normal)
         rockButton.setImage(UIImage(named: "rock"), for: .normal)
         rockButton.contentVerticalAlignment = .fill
         rockButton.contentHorizontalAlignment = .fill
         rockButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        rockButton.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
         return rockButton
     }()
     
     private lazy var scissorsButton: UIButton = {
         let scissorsButton = UIButton(type: .custom)
+        scissorsButton.setTitle("scissors", for: .normal)
         scissorsButton.setImage(UIImage(named: "scissors"), for: .normal)
         scissorsButton.contentVerticalAlignment = .fill
         scissorsButton.contentHorizontalAlignment = .fill
         scissorsButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        scissorsButton.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
         return scissorsButton
     }()
     
     private lazy var paperButton: UIButton = {
         let paperButton = UIButton(type: .custom)
+        paperButton.setTitle("paper", for: .normal)
         paperButton.setImage(UIImage(named: "paper"), for: .normal)
         paperButton.contentVerticalAlignment = .fill
         paperButton.contentHorizontalAlignment = .fill
         paperButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        paperButton.addTarget(self, action: #selector(selectButtonTapped), for: .touchUpInside)
         return paperButton
+    }()
+    
+    private lazy var resultLabel: UILabel = {
+        let lb = UILabel()
+        lb.text = "결과는?"
+        lb.textAlignment = .center
+        lb.font = .systemFont(ofSize: 30)
+        lb.textColor = .black
+        return lb
     }()
     
     override func viewDidLoad() {
@@ -126,13 +143,15 @@ class MainViewController: UIViewController {
         addViews()
         mainLabelConstraints()
         setChoiceImages()
-        setButton()
+        setChoiceButton()
+        setResultLabel()
     }
     
     func addViews() {
         view.addSubview(homeLabel)
         view.addSubview(stackImg)
         view.addSubview(stackButtonView)
+        view.addSubview(resultLabel)
     }
     
     func mainLabelConstraints() {
@@ -153,12 +172,69 @@ class MainViewController: UIViewController {
         stackImg.centerXAnchor.constraint(equalTo: homeLabel.centerXAnchor).isActive = true // x 중앙 정렬
     }
     
-    func setButton() {
+    func setChoiceButton() {
         stackButtonView.translatesAutoresizingMaskIntoConstraints = false
         stackButtonView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         stackButtonView.heightAnchor.constraint(equalToConstant: 100).isActive = true // 높이
         stackButtonView.leadingAnchor.constraint(equalTo: stackImg.leadingAnchor).isActive = true
         stackButtonView.topAnchor.constraint(equalTo: stackImg.bottomAnchor, constant: 50).isActive = true // 상단 위치
         stackButtonView.centerXAnchor.constraint(equalTo: stackImg.centerXAnchor).isActive = true // x 중앙 정렬
+    }
+    
+    func setResultLabel() {
+        resultLabel.translatesAutoresizingMaskIntoConstraints = false
+        resultLabel.topAnchor.constraint(equalTo: stackButtonView.bottomAnchor, constant: 50).isActive = true // 상단 위치
+        resultLabel.centerXAnchor.constraint(equalTo: stackButtonView.centerXAnchor).isActive = true // x 중앙 정렬
+    }
+    
+    @objc func selectButtonTapped(sender:UIButton) {
+        let comChoose = Rps(rawValue: Int.random(in: 0...2))
+        
+        guard let buttonTitle = sender.currentTitle else{ return }
+        
+        switch buttonTitle {
+        case "rock":
+            myChoose = Rps(rawValue: 0)
+            myChoice.image = UIImage(named: "rock")
+            break
+        case "scissors":
+            myChoose = Rps(rawValue: 2)
+            myChoice.image = UIImage(named: "scissors")
+            break
+        case "paper":
+            myChoose = Rps(rawValue: 1)
+            myChoice.image = UIImage(named: "paper")
+            break
+        default:
+            break
+        }
+        
+        switch comChoose{
+        case .rock:
+            pcChoice.image = UIImage(named: "rock.png")
+            break
+        case .paper:
+            pcChoice.image = UIImage(named: "paper.png")
+            break
+        case .scissors:
+            pcChoice.image = UIImage(named: "scissors.png")
+            break
+            
+        case .none:
+            break
+        }
+        
+        if comChoose == myChoose {
+            resultLabel.text = "비겼다"
+        } else if comChoose == .rock && myChoose == .paper {
+            resultLabel.text = "이겼다"
+        } else if comChoose == .paper && myChoose == .scissors {
+            resultLabel.text = "이겼다"
+        } else if comChoose == .scissors && myChoose == .rock {
+            resultLabel.text = "이겼다"
+        } else {
+            resultLabel.text = "졌다"
+        }
+        
     }
 }
