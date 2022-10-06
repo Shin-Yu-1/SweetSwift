@@ -14,6 +14,7 @@
 		150997A028E732A200F45920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509979E28E732A200F45920 /* LaunchScreen.storyboard */; };
 		150997A828E7330100F45920 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150997A728E7330100F45920 /* MainViewController.swift */; };
 		15CC175A28EF0E35004565FD /* Rps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CC175928EF0E35004565FD /* Rps.swift */; };
+		15CC175C28EF1138004565FD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CC175B28EF1138004565FD /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		150997A128E732A200F45920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		150997A728E7330100F45920 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		15CC175928EF0E35004565FD /* Rps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rps.swift; sourceTree = "<group>"; };
+		15CC175B28EF1138004565FD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = RSPGame/MainView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		150997A928E73C9300F45920 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15CC175B28EF1138004565FD /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1509979828E732A100F45920 /* ViewController.swift in Sources */,
+				15CC175C28EF1138004565FD /* MainView.swift in Sources */,
 				1509979428E732A100F45920 /* AppDelegate.swift in Sources */,
 				1509979628E732A100F45920 /* SceneDelegate.swift in Sources */,
 				15CC175A28EF0E35004565FD /* Rps.swift in Sources */,
