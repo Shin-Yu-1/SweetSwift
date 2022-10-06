@@ -13,6 +13,7 @@
 		1509979D28E732A200F45920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1509979C28E732A200F45920 /* Assets.xcassets */; };
 		150997A028E732A200F45920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509979E28E732A200F45920 /* LaunchScreen.storyboard */; };
 		150997A828E7330100F45920 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150997A728E7330100F45920 /* MainViewController.swift */; };
+		15CC175A28EF0E35004565FD /* Rps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CC175928EF0E35004565FD /* Rps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1509979F28E732A200F45920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		150997A128E732A200F45920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		150997A728E7330100F45920 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		15CC175928EF0E35004565FD /* Rps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				1509979328E732A100F45920 /* AppDelegate.swift */,
+				15CC175928EF0E35004565FD /* Rps.swift */,
 				1509979528E732A100F45920 /* SceneDelegate.swift */,
 				150997A728E7330100F45920 /* MainViewController.swift */,
 				1509979728E732A100F45920 /* ViewController.swift */,
@@ -148,6 +151,7 @@
 				1509979828E732A100F45920 /* ViewController.swift in Sources */,
 				1509979428E732A100F45920 /* AppDelegate.swift in Sources */,
 				1509979628E732A100F45920 /* SceneDelegate.swift in Sources */,
+				15CC175A28EF0E35004565FD /* Rps.swift in Sources */,
 				150997A828E7330100F45920 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
