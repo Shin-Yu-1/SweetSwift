@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var myChoose = Rps(rawValue: Int.random(in: 0...2))
+    var myChoose =ㄷ
     
     private let mainView = MainView()
     
